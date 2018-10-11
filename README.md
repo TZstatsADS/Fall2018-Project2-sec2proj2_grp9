@@ -17,11 +17,11 @@ The **learning goals** for this project is:
 
 *The above general statement about project 2 can be removed once you are finished with your project. It is optional.
 
-## Project Title Lorem ipsum dolor sit amet
+## Project Title 
 Term: Fall 2018
 
 + **Team** # sec2proj2_grp9
-+ **Projec title**: + Team members
++ **Projec title**: 
 	+ team member 1 Peilu Zhang || pz2233@columbia.edu
 	+ team member 2 Lingyi Zhao || lz2570@columbia.edu
 	+ team member 3 Nannan Wang || nw2387@columbia.edu
