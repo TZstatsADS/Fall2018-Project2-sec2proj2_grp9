@@ -33,19 +33,14 @@ https://project2-sec2-group9-nycyellowtaxi.shinyapps.io/final_2/
    + Min Jin: I finished the tab named "See Your Neighborhood" with Peilu and correct errors appared on app
    + Sheng Wang: I finished the tab named "Interesting Tips" and did data cleaning
 
->>>>>>> 3773b18330dccdad80745623b2f3287e022bbecc
-   
++ **Instruction**: This folder is orgarnized as follows:
 
-  
-Following [suggestions](http://nicercode.github.io/blog/2013-04-05-projects/) by [RICH FITZJOHN](http://nicercode.github.io/about/#Team) (@richfitz). This folder is orgarnized as follows.
-
-```
 proj/
 ????????? app/
-????????? lib/
-????????? data/
 ????????? doc/
+????????? lib/
+????????? .Rproj.user/
 ????????? output/
-```
+
 
 Please see each subfolder for a README file.
