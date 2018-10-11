@@ -30,7 +30,7 @@ https://project2-sec2-group9-nycyellowtaxi.shinyapps.io/final_2/
    + Lingyi Zhao: 
    + Nannan Wang: 
    + Min Jin: 
-   + Sheng Wang: 
+   + Sheng Wang: Tips analysis by four different aspects. 
    
 
   
