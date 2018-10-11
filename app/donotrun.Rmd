@@ -1,0 +1,136 @@
+---
+title: "w"
+author: "Nannan Wang"
+date: "October 6, 2018"
+output: html_document
+---
+# pick up location
+```{r}
+#install.packages("ggthemes")
+library(ggthemes)
+library(dplyr)
+library(ggplot2)
+setwd("/Users/somno/Desktop/kuailaixiugaiwo")
+pick <- read.csv("pick.csv")
+foo <- sample_n(pick, 8e3)
+p1 <- foo %>%
+      filter(pickup_longitude > -74.05 & pickup_longitude < -73.7) %>%
+      ggplot(aes(pickup_longitude)) +
+      geom_histogram(fill = "darkslateblue", bins = 40)
+p1 + theme_set(theme_solarized())
+
+p2 <- foo %>%
+    filter(pickup_latitude > 40.6 & pickup_latitude < 40.9) %>%
+      ggplot(aes(pickup_latitude)) +
+      geom_histogram(fill = "darkslateblue", bins = 40)
+p2 + theme_set(theme_solarized())
+```
+
+# drop pff location
+```{r}
+drop <- read.csv("drop.csv")
+
+doo <- sample_n(drop, 8e3)
+p3 <- doo %>%
+ filter(dropoff_longitude > -74.05 & dropoff_longitude < -73.7) %>%
+ ggplot(aes(dropoff_longitude)) +
+ geom_histogram(fill = "#CD5B45", bins = 40)
+p3 + theme_set(theme_solarized())
+
+p4 <- doo %>%
+ filter(dropoff_latitude > 40.6 & dropoff_latitude < 40.9) %>%
+ ggplot(aes(dropoff_latitude)) +
+ geom_histogram(fill = "#CD5B45", bins = 40)
+p4 + theme_set(theme_solarized())
+```
+
+# trip duration Vs Distance
+```{r}
+library(dplyr)
+library(geosphere)
+library(ggplot2)
+duration <- read.csv("duration.csv")
+distance <- distCosine(pick, drop, r=6378137)
+dura <- cbind(duration,distance)
+#head(dura)
+dura %>%
+  sample_n(5e4) %>%
+  ggplot(aes(distance, trip_duration)) +
+  geom_point() +
+  scale_x_log10() +
+  scale_y_log10() +
+  labs(x = "Direct distance [m]", y = "Trip duration [s]")
+```
+
+```{r}
+#dura %>%
+ # filter(trip_duration < 3600 & trip_duration > 120) %>%
+ # filter(dist > 100 & dist < 100e3) %>%
+ # ggplot(aes(distance, trip_duration)) +
+ # geom_bin2d(bins = c(500,500)) +
+ # scale_x_log10() +
+ # scale_y_log10() +
+ # labs(x = "Direct distance [m]", y = "Trip duration [s]")
+mean(dura$trip_duration)/60
+median(dura$trip_duration)/60
+mean(dura$distance)/1609.344
+median(dura$distance)/1609.344
+```
+
+```{r}
+setwd("/Users/somno/Desktop/kuailaixiugaiwo")
+pass <- read.csv("passenger.csv")
+pass %>%
+  ggplot(aes(passenger_count, trip_duration, color = passenger_count, group = passenger_count)) +
+  geom_boxplot() +
+  scale_y_log10() +
+  theme(legend.position = "none") +
+  facet_wrap(~ vendor_id) +
+  labs(y = "Trip duration [s]", x = "Number of passengers")
+
+```
+
+```{r}
+pass %>%
+  ggplot(aes(trip_duration, fill = vendor_id,group = vendor_id)) +
+  geom_density(position = "stack") +
+  scale_x_log10()
+```
+
+# weekday & Weekend
+```{r}
+library(lubridate)
+time <- read.csv("picktime.csv")
+time$pickup_datetime <-mdy_hm(time$pickup_datetime)
+time$pickup_date <- date(time$pickup_datetime)
+time$pickup_hour <- hour(time$pickup_datetime)
+time$pickup_minute <- minute(time$pickup_datetime)
+time$pickup_week <- wday(time$pickup_datetime)
+time <- time %>%
+  mutate(work = (pickup_hour %in% seq(8,18)) & (pickup_week %in% c("1","2","3","4","5")))
+duanddiweek <- cbind(dura,time$work)
+write.csv(duanddiweek,"yong.csv")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
