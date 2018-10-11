@@ -1,26 +1,10 @@
 # Project 2: Shiny App Development Version 2.0
 
-### [Project Description](doc/project2_desc.md)
 
-![screenshot](doc/screenshot2.png)
-
-In this second project of GR5243 Applied Data Science, we develop a version 2.0 of an *Exploratory Data Analysis and Visualization* shiny app on a topic of your choice using [NYC Open Data](https://opendata.cityofnewyork.us/) or U.S. government open data released on the [data.gov](https://data.gov/) website. See [Project 2 Description](doc/project2_desc.md) for more details.  
-
-The **learning goals** for this project is:
-
-- business intelligence for data science
-- study legacy codes and further development
-- data cleaning
-- data visualization
-- systems development/design life cycle
-- shiny app/shiny server
-
-*The above general statement about project 2 can be removed once you are finished with your project. It is optional.
-
-## Project Title 
+## Project Title : NYC Taxi Data
 Term: Fall 2018
 
-+ **Team** # sec2proj2_grp9
++ **Team** # section 2 group 9
 + **Projec title**: 
 	+ team member 1 Peilu Zhang || pz2233@columbia.edu
 	+ team member 2 Lingyi Zhao || lz2570@columbia.edu
@@ -28,11 +12,36 @@ Term: Fall 2018
 	+ team member 4 Min Jin || mj2824@columbia.edu
 	+ team member 5 Sheng Wang || sw3224@columbia.edu
 
-+ **Contribution statement**: ([default](doc/a_note_on_contributions.md)) All team members contributed equally in all stages of this project. All team members approve our work presented in this GitHub repository including this contributions statement. 
++ **Link to app**:
+https://project2-sec2-group9-nycyellowtaxi.shinyapps.io/final_2/
 
++ **Project Summary**: 
 
-## Data Source
-Source: [NYC Open Data.](http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml)
-+ **Description**: The yellow taxi trip records were collected and provided to the NYC Taxi and Limousine Commission (TLC) by technology providers authorized under the Taxicab & Livery Passenger Enhancement Programs (TPEP/LPEP).
++ **Data Source**:
+	- http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml
 
-+ **Usage**: Original dataset was downloaded on 28/09/2018, which basically contains records from 01-01-2016 to 12-31-2016. Because of the loading speed concern, this app uses only some sample random records from the original dataset.
++ **Data Description**: The yellow taxi trip records were collected and provided to the NYC Taxi and Limousine Commission (TLC) by technology providers authorized under the Taxicab & Livery Passenger Enhancement Programs (TPEP/LPEP).
+
++ **Data Usage**: Original dataset was downloaded on 28/09/2018, which basically contains records from 01-01-2016 to 12-31-2016. Because of the loading speed concern, this app uses only some sample random records from the original dataset.
+
++ **Contribution Statement**:All team members approve our work presented in this GitHub repository including this contributions statement.
+   + Peilu Zhang: 
+   + Lingyi Zhao: 
+   + Nannan Wang: 
+   + Min Jin: 
+   + Sheng Wang: 
+   
+
+  
+Following [suggestions](http://nicercode.github.io/blog/2013-04-05-projects/) by [RICH FITZJOHN](http://nicercode.github.io/about/#Team) (@richfitz). This folder is orgarnized as follows.
+
+```
+proj/
+├── app/
+├── lib/
+├── data/
+├── doc/
+└── output/
+```
+
+Please see each subfolder for a README file.
