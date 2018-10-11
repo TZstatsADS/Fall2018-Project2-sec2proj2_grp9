@@ -16,7 +16,7 @@ Term: Fall 2018
 + **Link to app**:
 https://project2-sec2-group9-nycyellowtaxi.shinyapps.io/final_2/
 
-+ **Project Summary**: Built up on a prior version of an application, we improved other three tabs and gave a deeper explore about dataset of New York City's yellow cab for pickup/dropoff locations, heatmap of neighborhood, estimate price as well as estimate time, and tips analysis. 
++ **Project Summary**: Built up on a prior version of an application, we improved four tabs and gave a deeper exploration about dataset of New York City's yellow cab for pickup/dropoff locations, heatmap of neighborhoods, estimation of price as well as time, and tips analysis. 
 
 + **Data Source**:
 	- http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml
