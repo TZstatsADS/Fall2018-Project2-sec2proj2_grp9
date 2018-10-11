@@ -1,6 +1,6 @@
 # Project 2: Shiny App Development Version 2.0
 
-![screenshot](data/taxi.jpg)
+![screenshot](doc/taxi.jpg)
 
 ## Project Title : NYC Taxi Data
 Term: Fall 2018
